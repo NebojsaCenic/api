@@ -15,9 +15,10 @@ searchForm.addEventListener('submit', async function (e) {
 
 
 const displayShows = async (shows) => {
+    container.empty() //isprazins prvo ovo i to je to
     for (let result of shows) {
         try {
-            const img = document.createElement('img')
+            const img = document.createElement('img') 
             img.src = result.show.image.medium;
             container.append(img)
             const title = document.createElement('span')
