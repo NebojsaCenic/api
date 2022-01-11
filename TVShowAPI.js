@@ -8,14 +8,10 @@ searchForm.addEventListener('submit', async function (e) {
     const config = { params: { q: inputValue } };
     const res = await axios.get(`https://api.tvmaze.com/search/shows?`, config)
     displayShows(res.data)
-    console.log(res.data)
-    searchForm.elements.query.value = '';
-    console.log(container.childElementCount)
 })
 
 
 const displayShows = async (shows) => {
-    container.empty() //isprazins prvo ovo i to je to
     for (let result of shows) {
         try {
             const img = document.createElement('img') 
